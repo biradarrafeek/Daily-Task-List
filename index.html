@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Learning Task List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app" role="application" aria-label="Daily Learning Task List">
+    <header>
+      <div class="brand">
+        <div class="logo">DL</div>
+        <div>
+          <h1>Daily Learning Tasks</h1>
+          <p class="lead">Plan your daily learning — code, read, practice.</p>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="small" style="color:var(--muted)"><strong id="dateNow"></strong></div>
+        <div class="small" id="timeNow" style="color:var(--muted)">--:--</div>
+      </div>
+    </header>
+
+    <!-- input -->
+    <div class="input-area" aria-label="Add task">
+      <div class="field">
+        <label class="small" for="title">Task</label>
+        <input id="title" type="text" placeholder="What will you learn today? (e.g. React hooks)" maxlength="80" />
+      </div>
+
+      <div class="field">
+        <label class="small" for="subject">Subject</label>
+        <input id="subject" type="text" placeholder="Subject / Course (optional)" />
+      </div>
+
+      <div class="field">
+        <label class="small" for="date">Due date</label>
+        <input id="date" type="date" />
+      </div>
+
+      <div class="field">
+        <label class="small" for="priority">Priority</label>
+        <select id="priority" aria-label="priority">
+          <option value="med">Medium</option>
+          <option value="high">High</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="small" style="opacity:.9">&nbsp;</label>
+        <button id="addBtn" title="Add task">Add</button>
+      </div>
+    </div>
+
+    <!-- controls -->
+    <div class="controls" role="toolbar" aria-label="filters and options">
+      <div class="pill">
+        <select id="filter">
+          <option value="all">All tasks</option>
+          <option value="today">Today</option>
+          <option value="overdue">Overdue</option>
+          <option value="completed">Completed</option>
+        </select>
+        <span class="count" id="taskCount"></span>
+      </div>
+
+      <div class="pill">
+        <select id="sort">
+          <option value="new">Newest</option>
+          <option value="old">Oldest</option>
+          <option value="priority">Priority</option>
+        </select>
+      </div>
+
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        <button id="clearCompleted" title="Clear completed">Clear completed</button>
+        <button id="export" title="Export tasks">Export</button>
+        <button id="import" title="Import tasks">Import</button>
+      </div>
+    </div>
+
+    <!-- list -->
+    <div class="list" id="list" aria-live="polite"></div>
+
+    <footer>
+      <div>Saved locally • <span id="storageMsg">0 tasks</span></div>
+      <div>Made by Rafeek M B — DailyLearning</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
