@@ -1,0 +1,318 @@
+
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #7c3aed;
+      --accent-2: #06b6d4;
+      --muted: #94a3b8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --glass: rgba(255, 255, 255, 0.04);
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, Segoe UI, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial
+    }
+
+    body {
+      background: radial-gradient(1000px 400px at 10% 10%, rgba(124, 58, 237, 0.12), transparent),
+        linear-gradient(180deg, #071023 0%, #071729 60%);
+      color: #e6eef8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 980px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+      border-radius: 14px;
+      box-shadow: 0 8px 28px rgba(2, 6, 23, 0.7);
+      padding: 18px;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 18px;
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.18);
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin: 0
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    /* input area */
+    .input-area {
+      display: grid;
+      grid-template-columns: 1fr 200px 140px 120px 90px;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .input-area .field {
+      background: var(--glass);
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      color: inherit;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .input-area button {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border: 0;
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(6, 182, 212, 0.08);
+    }
+
+    .input-area button:active {
+      transform: translateY(1px)
+    }
+
+    .small {
+      font-size: .85rem;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 6px
+    }
+
+    /* controls */
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .controls select,
+    .controls button {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 8px 10px;
+      border-radius: 10px;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    .controls .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.02)
+    }
+
+    .controls .count {
+      color: var(--muted);
+      margin-left: 6px;
+      font-size: .9rem
+    }
+
+    /* task list */
+    .list {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .task {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      transition: transform .16s, box-shadow .16s;
+    }
+
+    .task:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6)
+    }
+
+    .left {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex: 1
+    }
+
+    .checkbox {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+
+    .checkbox.checked {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border: 0
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .task-title {
+      font-weight: 600
+    }
+
+    .task-sub {
+      font-size: .86rem;
+      color: var(--muted)
+    }
+
+    .right {
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
+
+    .chip {
+      padding: 6px 8px;
+      border-radius: 8px;
+      font-size: .8rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.02)
+    }
+
+    .chip.high {
+      background: linear-gradient(90deg, #ff6b6b, #ff5252);
+      color: #FFF
+    }
+
+    .chip.med {
+      background: linear-gradient(90deg, #ffb86b, #ff8a4d);
+      color: #111
+    }
+
+    .chip.low {
+      background: linear-gradient(90deg, #9be15d, #00e3a8);
+      color: #042
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 6px;
+      border-radius: 8px
+    }
+
+    .icon-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.02)
+    }
+
+    .due {
+      font-size: .86rem;
+      color: var(--muted)
+    }
+
+    footer {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    /* empty */
+    .empty {
+      padding: 36px;
+      border-radius: 12px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.005));
+      color: var(--muted)
+    }
+
+    /* responsive */
+    @media (max-width:900px) {
+      .input-area {
+        grid-template-columns: 1fr 140px 120px 100px;
+      }
+
+      .input-area input[type="time"] {
+        display: none
+      }
+    }
+
+    @media (max-width:600px) {
+      .input-area {
+        grid-template-columns: 1fr;
+      }
+
+      .controls {
+        flex-direction: column;
+        align-items: stretch
+      }
+
+      .list {
+        gap: 8px
+      }
+    }
+  
